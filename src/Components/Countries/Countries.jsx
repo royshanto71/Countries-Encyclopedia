@@ -1,4 +1,5 @@
 import React, { use } from "react";
+import Country from "../Country";
 
 function Countries({ countriesPromise }) {
   const countriesData = use(countriesPromise);
@@ -8,16 +9,12 @@ function Countries({ countriesPromise }) {
   return (
     <div>
       <h2>Countries List</h2>
-      {countries.map((country) => (
-        <ul>
-          <li>
-            {country.name.common}
-            <div>
-              <img src={country.flags.flags.png} />
-            </div>
-          </li>
-        </ul>
-      ))}
+      <br />
+      <div className="countries-container">
+        {countries.map((country) => (
+          <Country country={country} />
+        ))}
+      </div>
     </div>
   );
 }

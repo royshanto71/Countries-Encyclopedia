@@ -7,9 +7,17 @@ function Countries({ countriesPromise }) {
   const countries = countriesData.countries;
 
   const [visitedCountries, setVisitedCountries] = useState([]);
+
+  const [visitedFlags, setVisitedFlags] = useState([]);
+
   const handleVisitedCountries = (country) => {
     console.log(country.name.common);
     setVisitedCountries([...visitedCountries, country]);
+  };
+
+  const handleVisitedFlags = (flag) => {
+    console.log("flag", flag);
+    setVisitedFlags([...visitedFlags, flag]);
   };
 
   return (
@@ -41,6 +49,19 @@ function Countries({ countriesPromise }) {
           ))}
         </ol>
       </div>
+      <div
+        style={{
+          margin: "30px auto",
+          width: "26%",
+          border: "1px dashed black",
+          textAlign: "center",
+        }}
+      >
+        <h3>Visited Flags</h3>
+        {visitedFlags.map((flag) => (
+          <img className="flag-img" key={flag} src={flag} alt="flag" />
+        ))}
+      </div>
 
       <div className="countries-container">
         {countries.map((country) => (
@@ -48,6 +69,7 @@ function Countries({ countriesPromise }) {
             key={country.cca3.cca3}
             country={country}
             handleVisitedCountries={handleVisitedCountries}
+            handleVisitedFlags={handleVisitedFlags}
           />
         ))}
       </div>

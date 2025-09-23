@@ -21,6 +21,14 @@
   border-radius: 8px;
   margin-bottom: 12px;
 }
+.country-card p {
+  font-size: 21px;
+  color: #555;
+  margin: 4px 0;
+  line-height: 1.4;
+  word-wrap: break-word;
+  font-family: "Times New Roman", Times, serif;
+}
 
 .countries-container {
   display: grid;
@@ -28,4 +36,24 @@
   gap: 20px;
   padding: 20px;
   background: #f9f9f9;
+}
+
+button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+button:hover {
+  background-color: #43a047;
+}
+
+button:active {
+  background-color: mediumaquamarine;
+  transform: scale(1.05);
 }
